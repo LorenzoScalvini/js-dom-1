@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lampadina</title>
+    <link rel="stylesheet" href="app.css">
+  </head>
+  <body>
+    <!-- Immagine della lampadina spenta, con ID per selezione nel JS -->
+    <img id="lampadina" src="white_lamp.png" alt="Lampadina Spenta" width="100"/>
+    <button id="on" class="button">Accendi</button>
+
+    <script>
+      // Seleziona l'immagine della lampadina e il pulsante usando i loro ID
+      const lampadina = document.getElementById("lampadina");
+      const bottone = document.getElementById("on");
+
+      // Aggiunge un evento di clic al pulsante
+      bottone.onclick = function () {
+        // Controlla se l'immagine dell'elemento corrente è quella della lampadina spenta e cambia il png della lampadina in base alla condizione
+        if (lampadina.src.includes("white_lamp.png")) {
+          lampadina.src = "yellow_lamp.png";
+          bottone.textContent = "Spegni";
+        } else {
+          lampadina.src = "white_lamp.png";
+          bottone.textContent = "Accendi";
+        }
+        // textContext cambia il testo dell'elemento selezionato
+      };
+    </script>
+  </body>
+</html>
